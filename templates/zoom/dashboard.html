@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-6 p-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Hey, {{ first_name }}!</h1>
+        <hr />
+        <p class="text-primary fw-bold">Enter Meeting Details</p>
+        <form class="text-start" method="post" action={% url 'meeting' %}>
+          {% csrf_token %}
+          <input type="text" name="accesstoken" value="{{ accessToken }}" hidden>
+          <div class="mb-3">
+            <label for="topic" class="form-label">Topic (Optional)</label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="topic"
+              name="topic"
+              placeholder="Name of Meeting"
+            />
+          </div>
+         
+          <button type="submit" class="btn btn-primary">Create Meeting</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-12 p-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Hey, User 👏 !</h1>
+        <p class="lead">Welcome to Zoom</p>
+        <hr class="my-4" />
+
+        <p class="lead">
+          {% if zoomAuthUrl %}
+          <a href="{{zoomAuthUrl}}" class="btn btn-primary">
+            Continue with Zoom <i class="fa-solid fa-video"></i>
+          </a>
+
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

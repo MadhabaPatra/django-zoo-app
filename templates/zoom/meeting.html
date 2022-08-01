@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-6 p-5">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to zoom meeting!</h1>
+        <hr />
+        <p class="text-primary fw-bold">Meeting Details</p>
+        <p class="text-left">
+          Topic: <span class="fw-bold text-primary">{{ meeting_topic }}</span>
+        </p>
+
+        <div>
+          <a href="{{start_meeting }}"
+            ><button type="button" class="btn btn-primary mt-5">
+              Start Meeting
+            </button></a
+          >
+          <a href="{{join_meeting }}"
+            ><button type="button" class="btn btn-warning mt-5">
+              Join the meeting (for guests)
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
